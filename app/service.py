@@ -1,5 +1,4 @@
 from typing import List, Optional
-from sqlmodel import Session, select
 from models import Produto
 from database import get_session
 
