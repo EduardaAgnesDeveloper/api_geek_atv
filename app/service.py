@@ -1,4 +1,5 @@
 from typing import List, Optional
+from Dockerfile import Session, select
 from models import Produto
 from database import get_session
 
