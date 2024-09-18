@@ -1,11 +1,11 @@
 from sqlmodel import create_engine, Session, SQLModel
 
-def get_engine():
-  url = 'sqlite:///teste.db'
-  engine = create_engine(url)
+DATABASE_URL = "sqlite:///test.db"
 
-  return engine
+engine = create_engine(DATABASE_URL, echo=True)
 
+def create_db_and_tables():
+    SQLModel.metadata.create_all(engine)
 
-def sync_database(engine):
-  SQLModel.metadata.create_all(engine)
+def get_session() -> Session:
+    return Session(engine)
